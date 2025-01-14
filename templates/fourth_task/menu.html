@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{{title}}{% endblock %}</title>
+
+</head>
+<body alink="yellow">
+    <header>
+        {% block pagename %}
+        <h1>Главная страница "ZOOBA"</h1>
+        {% endblock %}
+    </header>
+
+    <nav>
+        {% block menu %}
+        <a href="#"><h2>Главная</h2></a>
+        <a href="/buy"><h2>Магазин</h2></a>
+        <a href="/news"><h2>Новости</h2></a>
+        <a href="/cart"><h2>{{cart}}</h2></a>
+        {% endblock %}
+    </nav>
+    <main>
+        {% block content %}
+            {% for i in basic %}
+                <p><i>{{ i|title }}</i></p>
+            {% endfor %}
+        {% endblock %}
+    </main>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% extends "fourth_task/menu.html" %}
+
+
+
+{% block pagename %}
+    <h1><ins>Наше лучшее предложение</ins></h1>
+
+
+{% endblock %}
+
+{% block menu %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <h2>Игры</h2>
+    {% for i in games %}
+        <ul>
+            <li><i>{{ i.title }}|{{ i.description }}|Стоимость: {{ i.cost }}</i><button onclick="location.href='/cart';">Купить</button></li>
+        </ul>
+    {% endfor %}
+{% endblock %}
